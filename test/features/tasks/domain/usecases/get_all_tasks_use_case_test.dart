@@ -10,11 +10,11 @@ class MockTaskRepository extends Mock implements TaskRepository {}
 
 void main() {
   late TaskRepository repo;
-  late GetAllTasksUseCase getAllTasks;
+  late GetAllTasksUseCase getAllTasksUseCase;
 
   setUp(() {
     repo = MockTaskRepository();
-    getAllTasks = GetAllTasksUseCase(repo);
+    getAllTasksUseCase = GetAllTasksUseCase(repo);
   });
 
   test(
@@ -31,7 +31,7 @@ void main() {
           .thenAnswer((_) async => Right(testingTasks));
 
       // 2- Act [Get Result] //
-      final result = await getAllTasks();
+      final result = await getAllTasksUseCase();
 
       // 3- Assert [Check Expected Equality Result]
       expect(result, equals(Right<Failure, List<TaskEntity>>(testingTasks)));
