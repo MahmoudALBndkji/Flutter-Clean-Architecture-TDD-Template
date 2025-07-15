@@ -1,7 +1,9 @@
 part of 'task_cubit.dart';
 
-sealed class TaskState {
+sealed class TaskState extends Equatable {
   const TaskState();
+  @override
+  List<Object?> get props => [];
 }
 
 final class TaskInitial extends TaskState {
@@ -14,12 +16,16 @@ final class GettingTasks extends TaskState {
 
 final class TasksLoaded extends TaskState {
   const TasksLoaded(this.tasks);
-  final List<TaskEntity> tasks; 
+  final List<TaskEntity> tasks;
+  @override
+  List<Object?> get props => [tasks];
 }
 
 final class TasksError extends TaskState {
   const TasksError(this.message);
   final String message;
+  @override
+  List<Object?> get props => [message];
 }
 
 final class CreatingTask extends TaskState {

@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_clean_architecture_tdd_template/features/tasks/domain/entities/task_entity.dart';
 import 'package:flutter_clean_architecture_tdd_template/features/tasks/domain/params/create_task_params.dart';
