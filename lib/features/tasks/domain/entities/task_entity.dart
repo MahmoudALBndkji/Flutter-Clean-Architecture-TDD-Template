@@ -12,6 +12,13 @@ class TaskEntity extends Equatable {
     required this.createdAt,
   });
 
+  factory TaskEntity.test() => TaskEntity(
+        id: 1,
+        title: 'title',
+        tag: 'tag',
+        createdAt: DateTime(2025, 15, 7),
+      );
+
   @override
   List<Object?> get props => [id, title, tag, createdAt];
 }
