@@ -25,7 +25,7 @@ class TaskRepositoryImpl implements TaskRepository {
       return const Right(null);
     } on APIException catch (e) {
       return Left(
-        APIFailuer(messsage: e.errorMessage, statusCode: e.statusCode),
+        APIFailure(messsage: e.errorMessage, statusCode: e.statusCode),
       );
     }
   }
@@ -37,7 +37,7 @@ class TaskRepositoryImpl implements TaskRepository {
       return Right(result);
     } on APIException catch (e) {
       return Left(
-        APIFailuer(messsage: e.errorMessage, statusCode: e.statusCode),
+        APIFailure(messsage: e.errorMessage, statusCode: e.statusCode),
       );
     }
   }
