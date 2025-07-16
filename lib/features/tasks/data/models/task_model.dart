@@ -3,7 +3,7 @@ import 'package:flutter_clean_architecture_tdd_template/core/utils/typedef.dart'
 import 'package:flutter_clean_architecture_tdd_template/features/tasks/domain/entities/task_entity.dart';
 
 class TaskModel extends TaskEntity {
-  TaskModel({
+  const TaskModel({
     required super.id,
     required super.title,
     required super.tag,
