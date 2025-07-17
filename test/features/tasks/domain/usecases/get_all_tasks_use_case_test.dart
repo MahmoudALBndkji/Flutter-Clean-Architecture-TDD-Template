@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_clean_architecture_tdd_template/core/errors/failure.dart';
+import 'package:flutter_clean_architecture_tdd_template/core/usecases/usecase.dart';
 import 'package:flutter_clean_architecture_tdd_template/features/tasks/domain/entities/task_entity.dart';
 import 'package:flutter_clean_architecture_tdd_template/features/tasks/domain/repos/task_repository.dart';
 import 'package:flutter_clean_architecture_tdd_template/features/tasks/domain/usecases/get_all_tasks_use_case.dart';
@@ -15,6 +16,10 @@ void main() {
   setUp(() {
     repo = MockTaskRepository();
     getAllTasksUseCase = GetAllTasksUseCase(repo);
+  });
+
+  test('should implement [Usecase]', () {
+    expect(getAllTasksUseCase, isA<Usecase<List<TaskEntity>>>());
   });
 
   test(

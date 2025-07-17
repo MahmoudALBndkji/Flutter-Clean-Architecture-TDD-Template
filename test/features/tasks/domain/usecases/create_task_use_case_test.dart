@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_clean_architecture_tdd_template/core/errors/failure.dart';
+import 'package:flutter_clean_architecture_tdd_template/core/usecases/usecase.dart';
 import 'package:flutter_clean_architecture_tdd_template/features/tasks/domain/params/create_task_params.dart';
 import 'package:flutter_clean_architecture_tdd_template/features/tasks/domain/repos/task_repository.dart';
 import 'package:flutter_clean_architecture_tdd_template/features/tasks/domain/usecases/create_task_use_case.dart';
@@ -15,6 +16,10 @@ void main() {
   setUp(() {
     repo = MockTaskRepository();
     createTaskUseCase = CreateTaskUseCase(repo);
+  });
+
+  test('should implement [UsecaseWithParams]', () {
+    expect(createTaskUseCase, isA<UsecaseWithParams<void, CreateTaskParams>>());
   });
 
   test(

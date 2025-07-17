@@ -22,6 +22,11 @@ void main() {
     // This Used When Fail Generate Random Fake Data From any()
     registerFallbackValue(Uri());
   });
+
+  test('should implement [TaskDataSource]', () {
+    expect(taskRemoteDataSource, isA<TaskDataSource>());
+  });
+
   group(
     'create task',
     () {

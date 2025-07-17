@@ -22,6 +22,11 @@ void main() {
     taskRemoteDataSource = MockRemoteDataSource();
     taskRepoImp = TaskRepositoryImpl(taskRemoteDataSource);
   });
+
+  test('should implement [TaskRepository]', () {
+    expect(taskRepoImp, isA<TaskRepository>());
+  });
+
   group(
     'create task',
     () {
