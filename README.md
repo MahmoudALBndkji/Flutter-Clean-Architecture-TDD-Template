@@ -1,6 +1,6 @@
 # Flutter Clean Architecture TDD Template
 
-<img src="https://media.licdn.com/dms/image/v2/D4E12AQENhLUzGNhhiQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1666189223785?e=2147483647&v=beta&t=8SPzOhNdkwyv3gkL0IGCVqC0qnsVY0EKFbneOu1Kqtc" alt="TDD & Clean Architecture Image" width="100%" height="200">
+![TDD & Clean Architecture Image](https://media.licdn.com/dms/image/v2/D4E12AQENhLUzGNhhiQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1666189223785?e=2147483647&v=beta&t=8SPzOhNdkwyv3gkL0IGCVqC0qnsVY0EKFbneOu1Kqtc)
 
 A robust and scalable starter template for Flutter applications. This project is meticulously crafted to follow Clean Architecture principles and a Test-Driven Development (TDD) approach, providing a solid foundation for your next Flutter project.
 
@@ -20,24 +20,43 @@ The project follows a feature-first approach, with a clear separation of layers 
 
 ```
 lib
-├── core/                  # Core utilities, errors, services, and base classes
+├── core/                           # Core utilities, errors, services, and base classes
 │   ├── errors/
 │   ├── services/
 │   ├── usecases/
 │   └── utils/
-├── features/              # Application features
-│   └── tasks/             # Example "Tasks" feature
-│       ├── data/          # Data layer: models, data sources, repository implementation
-│       ├── domain/        # Domain layer: entities, use cases, repository contracts
-│       └── presentation/  # Presentation layer: cubits (state), screens, and widgets
-└── main.dart              # App entry point
+│
+├── features/
+│   └── tasks/                      # "Tasks" feature
+│       ├── data/                   # Data layer
+│       │   ├── datasources/        # Remote & local sources
+│       │   ├── models/             # DTOs, response models
+│       │   └── repos/              # Repository implementations
+│       ├── domain/                 # Domain layer
+│       │   ├── entities/           # Business objects
+│       │   ├── params/             # Input parameter classes
+│       │   ├── repos/              # Abstract repository contracts
+│       │   └── usecases/           # Business logic
+│       └── presentation/           # Presentation layer
+│           ├── cubits/             # State management (Cubit/Bloc classes)
+│           ├── screens/            # UI pages/screens
+│           └── widgets/            # Reusable UI components
+└── main.dart                       # App entry point
+
 test/
-├── features/              # Tests organized by feature
+├── features/
 │   └── tasks/
 │       ├── data/
+│       │   ├── datasources/
+│       │   ├── models/
+│       │   └── repos/
 │       ├── domain/
+│       │   └── usecases/
 │       └── presentation/
-└── fixtures/              # Mock data for testing
+│           └── cubits/
+│
+└── fixtures/                       # Mock data for testing
+
 ```
 
 ## Getting Started
